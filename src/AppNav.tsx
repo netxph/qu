@@ -1,13 +1,17 @@
 import React from 'react';
+import {
+    useLocation
+} from 'react-router-dom'
 
 function AppNav() {
+    const location = useLocation();
     return (
         <nav className="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
             <div className="container-fluid">
                 <span className="navbar-brand mb-0 h1">Qu</span>
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <a className="nav-link" href="https://github.com/netxph/qu">Contribute</a>
+                        <a className="nav-link" href="https://github.com/netxph/qu">{ location.pathname }</a>
                     </li>
                 </ul>
             </div>
