@@ -2,7 +2,7 @@ import React from 'react';
 
 function AppNav() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <nav className="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
             <div className="container-fluid">
                 <span className="navbar-brand mb-0 h1">Qu</span>
                 <ul className="navbar-nav">
