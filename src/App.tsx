@@ -19,7 +19,7 @@ function App() {
                         <Route exact path="/">
                             <NoGame />
                         </Route>
-                        <Route path="/game/new">
+                        <Route path="/game/setup">
                             <h1>New Game</h1>
                         </Route>
                     </Switch>
