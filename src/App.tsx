@@ -11,21 +11,7 @@ import NoGame from './NoGame';
 
 function App() {
     return (
-        <Router>
-            <div>
-                <AppNav />
-                <main className="container">
-                    <Switch>
-                        <Route exact path="/">
-                            <NoGame />
-                        </Route>
-                        <Route path="/game/setup">
-                            <h1>New Game</h1>
-                        </Route>
-                    </Switch>
-                </main>
-            </div>
-        </Router>
+        <div></div> 
     );
 }
 
