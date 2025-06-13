@@ -1,0 +1,14 @@
+{
+  "short_name": "Qu",
+  "name": "Qu - Game Queuing",
+  "description": "A simple game queuing system for managing game sessions.",
+  "display": "standalone",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "app150.png",
+      "sizes": "150x150",
+      "type": "image/png"
+    }
+  ]
+}
