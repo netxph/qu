@@ -1,8 +1,13 @@
-export default function Team() {
+import React from 'react'
+
+interface TeamProps extends React.PropsWithChildren {
+  id: number
+}
+
+export default function Team({ children, id }: TeamProps) {
   return (
-    <div>
-      <p>Player 1</p>
-      <p>Player 2</p>
+    <div data-id={id}>
+      {children}
     </div>
   )
 }
