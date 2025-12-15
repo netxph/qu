@@ -1,9 +1,9 @@
 export default function EmptyQueue() {
   return (
     <article>
-      <div className="p-6 rounded-lg min-h-12 flex items-center justify-center bg-white mt-2 shadow-md">
+      <div className="mt-2 flex min-h-12 items-center justify-center rounded-lg bg-white p-6 shadow-md">
         <a href="#">+</a>
       </div>
     </article>
-  )
+  );
 }

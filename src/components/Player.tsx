@@ -1,9 +1,7 @@
 interface PlayerProps {
-  name: string
+  name: string;
 }
 
 export default function Player({ name }: PlayerProps) {
-  return (
-    <p>{name}</p>
-  )
+  return <p>{name}</p>;
 }

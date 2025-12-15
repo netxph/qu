@@ -8,43 +8,43 @@
     },
     {
       "id": 2,
-      "name": "Bob K.",
+      "name": "Bob K."
     },
     {
       "id": 3,
-      "name": "Charlie L.",
+      "name": "Charlie L."
     },
     {
       "id": 4,
-      "name": "Dana M.",
+      "name": "Dana M."
     },
     {
       "id": 5,
-      "name": "Ethan N.",
+      "name": "Ethan N."
     },
     {
       "id": 6,
-      "name": "Fiona O.",
+      "name": "Fiona O."
     },
     {
       "id": 7,
-      "name": "George P.",
+      "name": "George P."
     },
     {
       "id": 8,
-      "name": "Hannah Q.",
+      "name": "Hannah Q."
     },
     {
       "id": 9,
-      "name": "Isaac R.",
+      "name": "Isaac R."
     },
     {
       "id": 10,
-      "name": "Jasmine S.",
+      "name": "Jasmine S."
     },
     {
       "id": 11,
-      "name": "Kevin T.",
+      "name": "Kevin T."
     },
     {
       "id": 12,
@@ -57,17 +57,11 @@
       "teams": [
         {
           "id": 1,
-          "players": [
-            { "id": 1 },
-            { "id": 2 }
-          ]
+          "players": [{ "id": 1 }, { "id": 2 }]
         },
         {
           "id": 2,
-          "players": [
-            { "id": 3 },
-            { "id": 4 }
-          ]
+          "players": [{ "id": 3 }, { "id": 4 }]
         }
       ]
     },
@@ -76,17 +70,11 @@
       "teams": [
         {
           "id": 1,
-          "players": [
-            { "id": 5 },
-            { "id": 6 }
-          ]
+          "players": [{ "id": 5 }, { "id": 6 }]
         },
         {
           "id": 2,
-          "players": [
-            { "id": 7 },
-            { "id": 8 }
-          ]
+          "players": [{ "id": 7 }, { "id": 8 }]
         }
       ]
     },
@@ -95,17 +83,11 @@
       "teams": [
         {
           "id": 1,
-          "players": [
-            { "id": 9 },
-            { "id": 10 }
-          ]
+          "players": [{ "id": 9 }, { "id": 10 }]
         },
         {
           "id": 2,
-          "players": [
-            { "id": 11 },
-            { "id": 12 }
-          ]
+          "players": [{ "id": 11 }, { "id": 12 }]
         }
       ]
     }
