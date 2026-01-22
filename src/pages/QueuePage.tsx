@@ -5,50 +5,13 @@ import EmptyQueue from "../components/EmptyQueue";
 import Team from "../components/Team";
 import Player from "../components/Player";
 import Menu from "../components/Menu";
+import Game from "../models/Game.model";
 
-const data = [
-  {
-    court: "Court 1",
-    teams: [
-      {
-        id: 1,
-        players: [{ name: "Alice J." }, { name: "Bob K." }],
-      },
-      {
-        id: 2,
-        players: [{ name: "Charlie L." }, { name: "Dana M." }],
-      },
-    ],
-  },
-  {
-    court: "Court 2",
-    teams: [
-      {
-        id: 1,
-        players: [{ name: "Ethan N." }, { name: "Fiona O." }],
-      },
-      {
-        id: 2,
-        players: [{ name: "George P." }, { name: "Hannah Q." }],
-      },
-    ],
-  },
-  {
-    court: "Court 3",
-    teams: [
-      {
-        id: 1,
-        players: [{ name: "Isaac R." }, { name: "Jasmine S." }],
-      },
-      {
-        id: 2,
-        players: [{ name: "Kevin T." }, { name: "Lara U." }],
-      },
-    ],
-  },
-];
+interface GameProps extends React.PropsWithChildren {
+  game: Game
+}
 
-export default function QueuePage() {
+export default function QueuePage({ game }: GameProps) {
   return (
     <>
       <Header />
@@ -56,12 +19,12 @@ export default function QueuePage() {
         <section className="flex flex-col gap-y-2">
           <Property />
 
-          {data.map((queue) => (
-            <Queue court={queue.court}>
+          {game.queues.map((queue) => (
+            <Queue key={queue.id} court="No court">
               {queue.teams.map((team) => (
-                <Team id={team.id}>
+                <Team key={team.id}>
                   {team.players.map((player) => (
-                    <Player name={player.name} />
+                    <Player key={player.name} name={player.name} />
                   ))}
                 </Team>
               ))}
