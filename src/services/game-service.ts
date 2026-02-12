@@ -22,9 +22,9 @@ interface GameData {
 }
 
 
-export const GameService = {
+export class GameService {
 
-  getById: (id: string): Game => {
+  public async getById(id: string): Promise<Game> {
     const db: GameData[] = [
       {
         id: id,
@@ -42,7 +42,7 @@ export const GameService = {
         }, {
           name: "Diana"
         }, {
-          name: "Eve"
+          name: "Frank"
         }, {
           name: "Grace"
         }, {
@@ -51,8 +51,9 @@ export const GameService = {
           name: "Ivy"
         }, {
           name: "Jack"
-        }
-        ],
+        }, {
+          name: "Ken"
+        }],
         queues: []
       }
     ]

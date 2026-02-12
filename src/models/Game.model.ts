@@ -26,10 +26,6 @@ export default class Game {
   }
 
   public register(player: Player): void {
-    if (!player) {
-      throw new Error('Player is required');
-    }
-
     this.players.push(player);
   }
 
@@ -39,6 +35,12 @@ export default class Game {
       throw new Error('Number of players does not match the size.');
     }
 
+    for (const name of players) {
+      if (!this.getPlayer(name)) {
+        throw new Error(`Player ${name} is not registered.`);
+      }
+    }
+
     let teams: Team[] = [];
 
     for (let i: number = 0; i < 2; i++) {
@@ -46,7 +48,7 @@ export default class Game {
       let p: Player[] = [];
 
       for (let j: number = 0; j < this.size; j++) {
-        p.push(this.getPlayer(players[(i * this.size) + j]));
+        p.push(this.getPlayer(players[(i * this.size) + j])!);
       }
 
       teams.push(new Team(i + 1, p));
@@ -59,8 +61,8 @@ export default class Game {
     this.queues.push(new Queue(lastId + 1, teams));
   }
 
-  private getPlayer(name: string): Player {
-    return this.players.find((p) => p.name === name)!;
+  private getPlayer(name: string): Player | undefined {
+    return this.players.find((p) => p.name === name);
   }
 
 }
