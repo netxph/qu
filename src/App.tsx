@@ -10,7 +10,7 @@ function App() {
 
   const [game, setGame] = useState<Game | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-  const [id] = useState<string>("00000000-0000-0000-0000-000000000000");
+  const [id] = useState<string>("e4f8d5a1-7c2a-4b9d-8e1f-3a6c2b9e4a1d");
 
   useEffect(() => {
     let isMounted = true;
@@ -22,9 +22,7 @@ function App() {
 
       if (isMounted && result) {
 
-        result.queue(["John", "Jane", "Alice", "Bob"]);
-        result.queue(["Charlie", "Diana", "Frank", "Grace"]);
-        result.queue(["Hank", "Ivy", "Jack", "Ken"]);
+        //place special initialization here for game object
 
         setGame(result);
         setLoading(false);

@@ -4,11 +4,12 @@ import Team from './Team.model';
 
 export default class Game {
   readonly id: string;
+  readonly group: string;
   readonly size: number;
   readonly players: Player[];
   readonly queues: Queue[];
 
-  constructor(id: string, size: number) {
+  constructor(id: string, size: number, group: string = "Game Group") {
     if (!id) {
       throw new Error('Game id is required');
     }
@@ -20,6 +21,7 @@ export default class Game {
     }
 
     this.size = size;
+    this.group = group;
 
     this.players = [];
     this.queues = [];

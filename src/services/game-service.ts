@@ -25,40 +25,17 @@ interface GameData {
 export class GameService {
 
   public async getById(id: string): Promise<Game> {
-    const db: GameData[] = [
-      {
-        id: id,
-        size: 2,
-        players: [{
-          name: "John"
-        }, {
-          name: "Jane"
-        }, {
-          name: "Alice"
-        }, {
-          name: "Bob"
-        }, {
-          name: "Charlie"
-        }, {
-          name: "Diana"
-        }, {
-          name: "Frank"
-        }, {
-          name: "Grace"
-        }, {
-          name: "Hank"
-        }, {
-          name: "Ivy"
-        }, {
-          name: "Jack"
-        }, {
-          name: "Ken"
-        }],
-        queues: []
-      }
-    ]
+    const response = await fetch('/game.json');
+    if (!response.ok) {
+      throw new Error(`Failed to fetch game data: ${response.statusText}`);
+    }
 
-    const data = db[0]
+    const games: GameData[] = await response.json();
+    const data = games.find(g => g.id === id);
+
+    if (!data) {
+      throw new Error(`Game with id ${id} not found`);
+    }
 
     const game = new Game(data.id, data.size);
 

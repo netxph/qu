@@ -14,7 +14,7 @@ interface GameProps extends React.PropsWithChildren {
 export default function QueuePage({ game }: GameProps) {
   return (
     <>
-      <Header />
+      <Header group={game.group} />
       <main className="font-lato mx-auto mt-8 max-w-6xl p-6">
         <section className="flex flex-col gap-y-2">
           <Property />
