@@ -17,6 +17,7 @@ interface QueueData {
 interface GameData {
   id: string,
   size: number,
+  group: string,
   players: PlayerData[],
   queues: QueueData[]
 }
@@ -37,7 +38,7 @@ export class GameService {
       throw new Error(`Game with id ${id} not found`);
     }
 
-    const game = new Game(data.id, data.size);
+    const game = new Game(data.id, data.size, data.group);
 
     data.players.map(p =>
       game.register(new Player(p.name)));

@@ -41,6 +41,25 @@
         "name": "Ken"
       }
     ],
-    "queues": []
+    "queues": [
+      {
+        "id": 1,
+        "teams": [
+          {
+            "id": 1,
+            "players": [
+              "John",
+              "Jane"
+            ]
+          }, {
+            "id": 2,
+            "players": [
+              "Alice",
+              "Bob"
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]
