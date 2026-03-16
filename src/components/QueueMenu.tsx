@@ -1,4 +1,4 @@
-export default function QueueMenu({ className }) {
+export default function QueueMenu({ className }: { className?: string }) {
   return (
     <div className={className}>
       <button className="text-xs">Play</button>
