@@ -6,7 +6,7 @@ import { GameService } from "./services/game-service";
 import QueuePage from "./pages/QueuePage";
 import Game from "./models/Game.model";
 
-function App() {
+export function App() {
 
   const [game, setGame] = useState<Game | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -23,7 +23,6 @@ function App() {
       if (isMounted && result) {
 
         //place special initialization here for game object
-
         setGame(result);
         setLoading(false);
       }
