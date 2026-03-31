@@ -25,7 +25,7 @@ interface GameData {
 export class GameService {
 
   public async getById(id: string): Promise<Game> {
-    const response = await fetch('/public/game.json');
+    const response = await fetch('/game.json');
     if (!response.ok) {
       throw new Error(`Failed to fetch game data: ${response.statusText}`);
     }

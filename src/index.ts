@@ -3,14 +3,17 @@ import index from "./index.html";
 
 const server = serve({
   routes: {
-    // Serve index.html for all unmatched routes.
-    "/*": index,
+    // Serve index.html ONLY for the root path.
+    "/": index,
 
-    "/public/*": {
+    // Handle all other unmatched routes.
+    "/*": {
       async GET(req) {
-        console.debug(req.url);
         const url = new URL(req.url);
-        const file = Bun.file("." + url.pathname);
+        const pathname = url.pathname;
+
+        // Check if the file exists in the /public folder
+        const file = Bun.file("./public" + pathname);
 
         if (await file.exists()) {
           return new Response(file);
