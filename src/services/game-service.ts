@@ -1,5 +1,6 @@
 import Game from "../models/Game.model";
 import Player from "../models/Player.model";
+import type { ILogger } from "../lib/Logger";
 
 interface PlayerData {
   name: string
@@ -24,7 +25,12 @@ interface GameData {
 
 export class GameService {
 
+  constructor(private readonly logger: ILogger) {
+  }
+
   public async getById(id: string): Promise<Game> {
+
+    this.logger.debug("Fetching /game.json");
     const response = await fetch('/game.json');
     if (!response.ok) {
       throw new Error(`Failed to fetch game data: ${response.statusText}`);

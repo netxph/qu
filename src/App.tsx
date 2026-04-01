@@ -2,6 +2,7 @@ import "./App.css";
 
 import { useEffect, useState } from "react";
 import { GameService } from "./services/game-service";
+import { DefaultLogger } from "./lib/Logger";
 
 import QueuePage from "./pages/QueuePage";
 import Game from "./models/Game.model";
@@ -16,7 +17,7 @@ export function App() {
     let isMounted = true;
 
     const fetchData = async () => {
-      var service = new GameService();
+      var service = new GameService(new DefaultLogger());
 
       const result = await service.getById(id);
 
