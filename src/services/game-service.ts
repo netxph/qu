@@ -28,9 +28,17 @@ export class GameService {
   constructor(private readonly logger: ILogger) {
   }
 
+  public async create(): Promise<Game> {
+    throw new Error("Not implemented yet");
+  }
+
+  public async getActive(): Promise<Game> {
+    throw new Error("Not implemented yet");
+  }
+
   public async getById(id: string): Promise<Game> {
 
-    this.logger.debug("Fetching /game.json");
+    this.logger.debug("Fetch: /game.json");
     const response = await fetch('/game.json');
     if (!response.ok) {
       throw new Error(`Failed to fetch game data: ${response.statusText}`);
