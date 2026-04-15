@@ -1,11 +1,11 @@
 import "./App.css";
 
 import { useEffect, useState } from "react";
-import { GameService } from "./services/game-service";
-import { DefaultLogger } from "./lib/Logger";
+import { GameService } from "./queues/services/game-service";
+import { DefaultLogger } from "./shared/lib/Logger";
 
-import QueuePage from "./pages/QueuePage";
-import Game from "./models/Game.model";
+import QueuePage from "./shared/pages/QueuePage";
+import Game from "./queues/models/Game.model";
 
 export function App() {
 

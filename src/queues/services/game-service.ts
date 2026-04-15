@@ -1,6 +1,6 @@
 import Game from "../models/Game.model";
 import Player from "../models/Player.model";
-import type { ILogger } from "../lib/Logger";
+import type { ILogger } from "../../shared/lib/Logger";
 
 interface PlayerData {
   name: string

@@ -1,11 +1,11 @@
 import Header from "../components/Header";
 import Property from "../components/Property";
-import Queue from "../components/Queue";
-import EmptyQueue from "../components/EmptyQueue";
+import Queue from "../../queues/components/Queue";
+import EmptyQueue from "../../queues/components/EmptyQueue";
 import Team from "../components/Team";
 import Player from "../components/Player";
 import Menu from "../components/Menu";
-import Game from "../models/Game.model";
+import Game from "../../queues/models/Game.model";
 
 interface GameProps extends React.PropsWithChildren {
   game: Game
