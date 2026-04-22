@@ -9,6 +9,8 @@ export class GameRepository {
     }
 
     async getLastGame(): Promise<GameData | undefined> {
+        await this._db.init();
+
         const data = await this._db.games.toCollection().first();
 
         if (data) {

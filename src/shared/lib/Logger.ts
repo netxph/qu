@@ -4,8 +4,8 @@ export interface ILogger {
     trace(msg: string): void,
     debug(msg: string): void,
     info(msg: string): void,
-    warn(msg: string): void,
-    error(msg: string): void
+    warn(msg: string, error?: Error): void,
+    error(msg: string, error?: Error): void
 }
 
 export class DefaultLogger implements ILogger {
@@ -29,10 +29,10 @@ export class DefaultLogger implements ILogger {
     info(msg: string): void {
         log.info(msg);
     }
-    warn(msg: string): void {
+    warn(msg: string, error?: Error): void {
         log.warn(msg);
     }
-    error(msg: string): void {
-        log.error(msg);
+    error(msg: string, error?: Error): void {
+        log.error(msg, error);
     }
 }
