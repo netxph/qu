@@ -1,51 +1,17 @@
 import "./App.css";
-
-import { useEffect, useState } from "react";
-import { GameService } from "./queues/services/game-service";
-import { DefaultLogger } from "./shared/lib/Logger";
-
 import QueuePage from "./shared/pages/QueuePage";
 import Game from "./queues/models/Game.model";
+import GameService from "./queues/services/game-service";
+import { GameRepository } from "./queues/repositories/Game.repository";
+import { DefaultLogger } from "./shared/lib/Logger";
 
 export function App() {
 
-  const [game, setGame] = useState<Game | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [id] = useState<string>("e4f8d5a1-7c2a-4b9d-8e1f-3a6c2b9e4a1d");
+  var service = new GameService(
+    new GameRepository(), 
+    new DefaultLogger());
 
-  useEffect(() => {
-    let isMounted = true;
-
-    const fetchData = async () => {
-      var service = new GameService(new DefaultLogger());
-
-      const result = await service.getById(id);
-
-      if (isMounted && result) {
-
-        //place special initialization here for game object
-        setGame(result);
-        setLoading(false);
-      }
-    }
-
-    fetchData();
-
-    return () => {
-      isMounted = false;
-    };
-
-  }, [id])
-
-  if (loading) {
-    console.log("Loading...");
-    return "";
-  }
-
-  if (!game) {
-    console.log("Game not found");
-    return "";
-  }
+  const game = service.GetLast();
 
   return <QueuePage game={game} />;
 }

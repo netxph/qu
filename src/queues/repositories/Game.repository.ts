@@ -1,7 +1,11 @@
 import { db, AppDb, type GameData } from "../../shared/lib/db"
 import Game from "../models/Game.model";
 
-export class GameRepository {
+export interface IGameRepository {
+    getLastGame(): Promise<GameData | undefined>;
+}
+
+export class GameRepository implements IGameRepository {
     private _db: AppDb;
 
     constructor(database: AppDb = db) {

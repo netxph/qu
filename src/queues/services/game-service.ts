@@ -1,5 +1,6 @@
 import Game from "../models/Game.model";
 import Player from "../models/Player.model";
+import type { IGameRepository } from "../repositories/Game.repository";
 import type { ILogger } from "../../shared/lib/Logger";
 
 interface PlayerData {
@@ -23,39 +24,15 @@ interface GameData {
   queues: QueueData[]
 }
 
-export class GameService {
+export default class GameService {
 
-  constructor(private readonly logger: ILogger) {
+  constructor(
+    private readonly repository: IGameRepository, 
+    private readonly logger: ILogger) {
   }
 
-  public async create(): Promise<Game> {
-    throw new Error("Not implemented yet");
+  GetLast(): Game {
+    return new Game("game-1", 2, "Group A");
   }
 
-  public async getActive(): Promise<Game> {
-    throw new Error("Not implemented yet");
-  }
-
-  public async getById(id: string): Promise<Game> {
-
-    this.logger.debug("Fetch: /game.json");
-    const response = await fetch('/game.json');
-    if (!response.ok) {
-      throw new Error(`Failed to fetch game data: ${response.statusText}`);
-    }
-
-    const games: GameData[] = await response.json();
-    const data = games.find(g => g.id === id);
-
-    if (!data) {
-      throw new Error(`Game with id ${id} not found`);
-    }
-
-    const game = new Game(data.id, data.size, data.group);
-
-    data.players.map(p =>
-      game.register(new Player(p.name)));
-
-    return game;
-  }
 }
